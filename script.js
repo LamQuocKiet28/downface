@@ -69,7 +69,7 @@ form.addEventListener("submit", (event) => {
   try {
     url = new URL(value);
   } catch {
-    showMessage("Vui lòng nhập một liên kết Facebook hợp lệ.");
+    showMessage("Vui lòng dán một liên kết đầy đủ, bắt đầu bằng https://.");
     urlInput.focus();
     return;
   }
@@ -122,7 +122,9 @@ form.addEventListener("submit", (event) => {
       showMessage("Đã tìm thấy các chất lượng. Hãy chọn một lựa chọn để tải.", "success");
     })
     .catch((error) => {
-      showMessage(error.message);
+      showMessage(error instanceof TypeError
+        ? "Không thể kết nối máy chủ tải xuống. Máy chủ có thể đang khởi động, hãy thử lại sau 30 giây."
+        : error.message);
     })
     .finally(() => {
       button.disabled = false;
@@ -158,7 +160,9 @@ async function downloadFormat(url, format, option) {
     URL.revokeObjectURL(downloadUrl);
     showMessage("Tải video thành công. Hãy kiểm tra thư mục Downloads.", "success");
   } catch (error) {
-    showMessage(error.message);
+    showMessage(error instanceof TypeError
+      ? "Không thể kết nối máy chủ tải xuống. Máy chủ có thể đang khởi động, hãy thử lại sau 30 giây."
+      : error.message);
   } finally {
     option.disabled = false;
     option.classList.remove("loading");

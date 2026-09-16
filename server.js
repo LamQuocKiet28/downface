@@ -9,7 +9,10 @@ const root = __dirname;
 const port = Number(process.env.PORT) || 3000;
 const maxBodySize = 8 * 1024;
 const allowedHosts = /(^|\.)facebook\.com$|(^|\.)fb\.watch$|(^|\.)tiktok\.com$|(^|\.)douyin\.com$|(^|\.)youtube\.com$|(^|\.)youtu\.be$/i;
-const allowedOrigin = process.env.FRONTEND_URL || "https://downloadface.netlify.app";
+const allowedOrigins = new Set([
+  "https://downloadface.netlify.app",
+  process.env.FRONTEND_URL,
+].filter(Boolean));
 const mimeTypes = {
   ".css": "text/css; charset=utf-8",
   ".html": "text/html; charset=utf-8",
@@ -23,7 +26,11 @@ function json(response, status, body) {
 }
 
 function setCors(response) {
-  response.setHeader("Access-Control-Allow-Origin", allowedOrigin);
+  const origin = response.req.headers.origin;
+  if (origin && allowedOrigins.has(origin)) {
+    response.setHeader("Access-Control-Allow-Origin", origin);
+    response.setHeader("Vary", "Origin");
+  }
   response.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 }
