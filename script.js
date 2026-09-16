@@ -26,6 +26,11 @@ function detectPlatform(value) {
   } catch {
     return null;
   }
+
+  function extractUrl(value) {
+    const match = value.match(/https?:\/\/[^\s]+/i);
+    return match ? match[0].replace(/[),。！？]+$/g, "") : value;
+  }
   return null;
 }
 
@@ -63,7 +68,7 @@ pasteButton.addEventListener("click", async () => {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const value = urlInput.value.trim();
+  const value = extractUrl(urlInput.value.trim());
   let url;
 
   try {
