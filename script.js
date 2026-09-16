@@ -7,6 +7,7 @@ const formatList = document.querySelector("#format-list");
 const videoTitle = document.querySelector("#video-title");
 const videoMeta = document.querySelector("#video-meta");
 const videoThumbnail = document.querySelector("#video-thumbnail");
+const API_URL = window.DOWNFACE_API_URL || "https://downface-api.onrender.com";
 
 function showMessage(text, type = "") {
   message.textContent = text;
@@ -55,7 +56,7 @@ form.addEventListener("submit", (event) => {
   resultsPanel.hidden = true;
   showMessage("Đang lấy các chất lượng video...", "success");
 
-  fetch("/api/formats", {
+  fetch(`${API_URL}/api/formats`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ url: value }),
@@ -103,7 +104,7 @@ async function downloadFormat(url, format, option) {
   option.classList.add("loading");
   option.querySelector("span").firstChild.textContent = "Đang tải... ";
   try {
-    const response = await fetch("/api/download", {
+    const response = await fetch(`${API_URL}/api/download`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

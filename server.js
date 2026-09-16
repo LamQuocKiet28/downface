@@ -9,6 +9,7 @@ const root = __dirname;
 const port = Number(process.env.PORT) || 3000;
 const maxBodySize = 8 * 1024;
 const allowedHosts = /(^|\.)facebook\.com$|(^|\.)fb\.watch$/i;
+const allowedOrigin = process.env.FRONTEND_URL || "https://downloadface.netlify.app";
 const mimeTypes = {
   ".css": "text/css; charset=utf-8",
   ".html": "text/html; charset=utf-8",
@@ -19,6 +20,12 @@ const ffmpegBin = path.join(process.env.LOCALAPPDATA || "", "Microsoft", "WinGet
 function json(response, status, body) {
   response.writeHead(status, { "Content-Type": "application/json; charset=utf-8" });
   response.end(JSON.stringify(body));
+}
+
+function setCors(response) {
+  response.setHeader("Access-Control-Allow-Origin", allowedOrigin);
+  response.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 }
 
 function parseRequestBody(request) {
@@ -186,6 +193,12 @@ function serveStatic(request, response) {
 }
 
 const server = http.createServer(async (request, response) => {
+  setCors(response);
+  if (request.method === "OPTIONS") {
+    response.writeHead(204);
+    response.end();
+    return;
+  }
   if (request.method === "POST" && request.url === "/api/formats") {
     try {
       const body = await parseRequestBody(request);
