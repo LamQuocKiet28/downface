@@ -7,7 +7,7 @@ const formatList = document.querySelector("#format-list");
 const videoTitle = document.querySelector("#video-title");
 const videoMeta = document.querySelector("#video-meta");
 const videoThumbnail = document.querySelector("#video-thumbnail");
-const API_URL = window.DOWNFACE_API_URL || "https://downface-api.onrender.com";
+const API_URL = "https://downface-api.onrender.com";
 
 function showMessage(text, type = "") {
   message.textContent = text;
