@@ -2,7 +2,7 @@
   "name": "downface",
   "version": "1.0.0",
   "private": true,
-  "description": "Facebook public video downloader",
+  "description": "Public video downloader for Facebook, TikTok, YouTube and Douyin",
   "scripts": {
     "start": "node server.js"
   }

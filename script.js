@@ -8,6 +8,37 @@ const videoTitle = document.querySelector("#video-title");
 const videoMeta = document.querySelector("#video-meta");
 const videoThumbnail = document.querySelector("#video-thumbnail");
 const API_URL = "https://downface-api.onrender.com";
+const platformButtons = document.querySelectorAll("[data-platform]");
+const platformLabels = {
+  facebook: "Facebook",
+  tiktok: "TikTok",
+  youtube: "YouTube",
+  douyin: "Douyin",
+};
+
+function detectPlatform(value) {
+  try {
+    const hostname = new URL(value).hostname.toLowerCase();
+    if (hostname.includes("facebook") || hostname === "fb.watch") return "facebook";
+    if (hostname.includes("tiktok")) return "tiktok";
+    if (hostname.includes("youtube") || hostname === "youtu.be") return "youtube";
+    if (hostname.includes("douyin")) return "douyin";
+  } catch {
+    return null;
+  }
+  return null;
+}
+
+function selectPlatform(platform) {
+  platformButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.platform === platform);
+  });
+  urlInput.placeholder = `Dán liên kết ${platformLabels[platform]} vào đây...`;
+}
+
+platformButtons.forEach((button) => {
+  button.addEventListener("click", () => selectPlatform(button.dataset.platform));
+});
 
 function showMessage(text, type = "") {
   message.textContent = text;
@@ -43,9 +74,9 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  const isFacebook = /(^|\.)facebook\.com$/i.test(url.hostname) || /(^|\.)fb\.watch$/i.test(url.hostname);
-  if (!isFacebook) {
-    showMessage("Liên kết này không thuộc Facebook. Hãy kiểm tra và thử lại.");
+  const platform = detectPlatform(value);
+  if (!platform) {
+    showMessage("Liên kết chưa được hỗ trợ. Hãy dùng Facebook, TikTok, YouTube hoặc Douyin.");
     urlInput.focus();
     return;
   }
@@ -70,7 +101,7 @@ form.addEventListener("submit", (event) => {
     })
     .then((data) => {
       videoTitle.textContent = data.title;
-      videoMeta.textContent = data.duration ? `Thời lượng ${Math.round(data.duration)} giây` : "Video công khai trên Facebook";
+      videoMeta.textContent = data.duration ? `Thời lượng ${Math.round(data.duration)} giây · ${platformLabels[platform]}` : `Nội dung công khai trên ${platformLabels[platform]}`;
       if (data.thumbnail) {
         videoThumbnail.src = data.thumbnail;
         videoThumbnail.hidden = false;
@@ -82,7 +113,7 @@ form.addEventListener("submit", (event) => {
         const option = document.createElement("button");
         option.className = "format-option";
         option.type = "button";
-        const kind = format.type === "audio" ? `Tải xuống ${format.label}` : `Tải xuống MP4`;
+        const kind = format.type.startsWith("audio") ? `Tải xuống ${format.label}` : "Tải xuống MP4";
         option.innerHTML = `<span>↓ ${kind} <b>${format.label}</b></span><span>→</span>`;
         option.addEventListener("click", () => downloadFormat(value, format, option));
         formatList.append(option);

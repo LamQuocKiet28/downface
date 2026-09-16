@@ -8,7 +8,7 @@ const { spawn } = require("node:child_process");
 const root = __dirname;
 const port = Number(process.env.PORT) || 3000;
 const maxBodySize = 8 * 1024;
-const allowedHosts = /(^|\.)facebook\.com$|(^|\.)fb\.watch$/i;
+const allowedHosts = /(^|\.)facebook\.com$|(^|\.)fb\.watch$|(^|\.)tiktok\.com$|(^|\.)douyin\.com$|(^|\.)youtube\.com$|(^|\.)youtu\.be$/i;
 const allowedOrigin = process.env.FRONTEND_URL || "https://downloadface.netlify.app";
 const mimeTypes = {
   ".css": "text/css; charset=utf-8",
@@ -49,7 +49,7 @@ function parseRequestBody(request) {
   });
 }
 
-function validateFacebookUrl(value) {
+function validateMediaUrl(value) {
   let url;
   try {
     url = new URL(value);
@@ -57,7 +57,7 @@ function validateFacebookUrl(value) {
     throw new Error("URL không hợp lệ.");
   }
   if (url.protocol !== "https:" || !allowedHosts.test(url.hostname)) {
-    throw new Error("Chỉ hỗ trợ liên kết Facebook HTTPS công khai.");
+    throw new Error("Liên kết chưa được hỗ trợ hoặc không phải HTTPS.");
   }
   return url.toString();
 }
@@ -202,7 +202,7 @@ const server = http.createServer(async (request, response) => {
   if (request.method === "POST" && request.url === "/api/formats") {
     try {
       const body = await parseRequestBody(request);
-      const url = validateFacebookUrl(body.url);
+      const url = validateMediaUrl(body.url);
       const info = await inspectVideo(url);
       json(response, 200, {
         title: info.title || "Facebook video",
@@ -219,7 +219,7 @@ const server = http.createServer(async (request, response) => {
     let directory;
     try {
       const body = await parseRequestBody(request);
-      const url = validateFacebookUrl(body.url);
+      const url = validateMediaUrl(body.url);
       const formatId = body.formatId || "best";
       directory = fs.mkdtempSync(path.join(os.tmpdir(), "downface-"));
       const filePath = await downloadVideo(url, formatId, body.audioFormat, directory);

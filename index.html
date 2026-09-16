@@ -11,28 +11,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="DownFace giúp tải video Facebook, Reels và Watch công khai ở MP4, HD, Full HD hoặc MP3 nhanh chóng, miễn phí và không cần đăng nhập."
+      content="DownFace hỗ trợ tải video Facebook, TikTok, YouTube và Douyin công khai ở MP4, HD, Full HD hoặc MP3 nhanh chóng, miễn phí."
     />
     <meta
       name="keywords"
-      content="tải video Facebook, download video Facebook, tải Reels Facebook, tải Facebook Watch, tải video Facebook HD, tải video Facebook MP3"
+      content="tải video Facebook, tải video TikTok, tải video YouTube, tải video Douyin, download video HD, tải video MP3"
     />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="DownFace" />
     <link rel="canonical" href="https://downloadface.netlify.app/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="DownFace" />
-    <meta property="og:title" content="DownFace - Tải video Facebook MP4 và MP3" />
+    <meta property="og:title" content="DownFace - Tải video Facebook, TikTok, YouTube và Douyin" />
     <meta
       property="og:description"
-      content="Công cụ tải video Facebook công khai ở chất lượng HD, Full HD và MP3. Không cần đăng nhập."
+      content="Tải video công khai từ Facebook, TikTok, YouTube và Douyin ở chất lượng HD, Full HD hoặc MP3."
     />
     <meta property="og:locale" content="vi_VN" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="DownFace - Tải video Facebook" />
     <meta
       name="twitter:description"
-      content="Tải video Facebook, Reels và Watch công khai miễn phí."
+      content="Tải video Facebook, TikTok, YouTube và Douyin công khai miễn phí."
     />
     <link rel="alternate" hreflang="vi" href="/" />
     <link rel="stylesheet" href="styles.css" />
@@ -50,10 +50,10 @@
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Web",
         "inLanguage": "vi",
-        "description": "Công cụ tải video Facebook công khai ở định dạng MP4 và MP3.",
+        "description": "Công cụ tải video công khai từ Facebook, TikTok, YouTube và Douyin ở định dạng MP4 và MP3.",
         "featureList": [
-          "Tải video Facebook HD và Full HD",
-          "Tải Facebook Reels và Watch",
+          "Tải video Facebook, TikTok, YouTube và Douyin",
+          "Tải video HD và Full HD",
           "Chuyển audio sang MP3"
         ],
         "offers": {
@@ -85,12 +85,18 @@
         <div class="hero-glow hero-glow-two"></div>
         <div class="container hero-content">
           <div class="eyebrow"><span class="spark">✦</span> NHANH · MIỄN PHÍ · DỄ DÙNG</div>
-          <h1>Tải video Facebook<br /><span>theo cách đơn giản.</span></h1>
+          <h1>Tải video từ mọi nền tảng<br /><span>theo cách đơn giản.</span></h1>
           <p class="hero-copy">
-            Tải video Facebook, Reels và Watch công khai ở chất lượng HD.<br />
+            Facebook · TikTok · YouTube · Douyin ở chất lượng HD.<br />
             Không cần đăng nhập, không cần cài đặt phần mềm.
           </p>
 
+          <div class="platform-picker" role="tablist" aria-label="Chọn nền tảng">
+            <button class="platform-tab active" data-platform="facebook" type="button">f <span>Facebook</span></button>
+            <button class="platform-tab" data-platform="tiktok" type="button">♪ <span>TikTok</span></button>
+            <button class="platform-tab" data-platform="youtube" type="button">▶ <span>YouTube</span></button>
+            <button class="platform-tab" data-platform="douyin" type="button">抖 <span>Douyin</span></button>
+          </div>
           <form class="download-form" id="download-form" novalidate>
             <label class="sr-only" for="video-url">Dán liên kết video Facebook</label>
             <div class="input-shell">
@@ -100,7 +106,7 @@
                 name="video-url"
                 type="url"
                 autocomplete="url"
-                placeholder="Dán liên kết video Facebook vào đây..."
+                placeholder="Dán liên kết Facebook vào đây..."
                 spellcheck="false"
               />
               <button class="paste-button" type="button" id="paste-button">DÁN</button>
@@ -138,11 +144,12 @@
 
       <section class="supported-section">
         <div class="container supported-inner">
-          <span class="supported-label">HOẠT ĐỘNG VỚI</span>
+          <span class="supported-label">HỖ TRỢ NỀN TẢNG</span>
           <div class="platforms">
             <span class="platform"><b class="platform-icon facebook">f</b> Facebook</span>
-            <span class="platform"><b class="platform-icon reels">▶</b> Reels</span>
-            <span class="platform"><b class="platform-icon watch">▶</b> Watch</span>
+            <span class="platform"><b class="platform-icon tiktok">♪</b> TikTok</span>
+            <span class="platform"><b class="platform-icon youtube">▶</b> YouTube</span>
+            <span class="platform"><b class="platform-icon douyin">抖</b> Douyin</span>
           </div>
         </div>
       </section>
@@ -205,15 +212,15 @@
           <div class="eyebrow">DOWNFACE</div>
           <h2>Tải video Facebook nhanh và đơn giản</h2>
           <p>
-            DownFace là công cụ trực tuyến hỗ trợ tải video Facebook công khai,
-            Facebook Reels và Facebook Watch về thiết bị ở định dạng MP4 hoặc MP3.
-            Bạn chỉ cần sao chép liên kết bài đăng, dán vào ô tìm kiếm và chọn
-            chất lượng phù hợp.
+            DownFace là công cụ trực tuyến hỗ trợ tải video công khai từ Facebook,
+            TikTok, YouTube và Douyin về thiết bị ở định dạng MP4 hoặc MP3.
+            Bạn chỉ cần sao chép liên kết, dán vào ô tìm kiếm và chọn chất lượng
+            phù hợp.
           </p>
           <p>
             Công cụ hoạt động trên điện thoại và máy tính, hỗ trợ các lựa chọn
-            video HD, Full HD và audio MP3. Hãy chỉ tải nội dung bạn có quyền
-            sử dụng và tôn trọng quyền riêng tư của người đăng.
+            video HD, Full HD và audio MP3. Hãy chỉ tải nội dung công khai mà bạn
+            có quyền sử dụng và tôn trọng quyền riêng tư của người đăng.
           </p>
         </div>
       </section>

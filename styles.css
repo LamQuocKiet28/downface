@@ -34,6 +34,10 @@ h1, h2 { font-family: "Space Grotesk", sans-serif; letter-spacing: -2.2px; }
 h1 { margin: 18px 0 21px; font-size: clamp(42px, 6vw, 70px); line-height: 1.04; }
 h1 span { color: var(--purple); }
 .hero-copy { color: var(--muted); font-size: 16px; line-height: 1.65; }
+.platform-picker { display: flex; justify-content: center; gap: 8px; margin: 30px auto -17px; }
+.platform-tab { display: inline-flex; align-items: center; gap: 7px; padding: 9px 13px; border: 1px solid #deddf0; border-radius: 9px; color: #73748a; background: rgba(255,255,255,.68); font: 600 12px "DM Sans", sans-serif; cursor: pointer; transition: .2s ease; }
+.platform-tab:hover, .platform-tab.active { border-color: var(--purple); color: var(--purple); background: white; box-shadow: 0 5px 14px rgba(98,88,232,.12); }
+.platform-tab:first-letter { font-weight: 700; }
 .download-form { display: flex; width: min(710px, 100%); gap: 10px; margin: 38px auto 12px; }
 .input-shell { display: flex; align-items: center; flex: 1; min-width: 0; padding: 0 14px 0 17px; background: white; border: 1px solid #deddf0; border-radius: 12px; box-shadow: 0 8px 25px rgba(67, 57, 160, .08); }
 .link-icon { color: #8a88a8; font-size: 23px; transform: rotate(-45deg); }
@@ -68,7 +72,7 @@ input::placeholder { color: #a7a7b6; }
 .platforms { display: flex; gap: 30px; color: #6b6d83; font-size: 13px; font-weight: 600; }
 .platform { display: flex; align-items: center; gap: 8px; }
 .platform-icon { display: inline-grid; width: 23px; height: 23px; place-items: center; border-radius: 7px; color: white; font: 700 17px Arial; }
-.facebook { background: #4d65bc; } .reels { background: #d94e81; font-size: 11px; } .watch { background: #3a9db7; font-size: 11px; }
+.facebook { background: #4d65bc; } .tiktok { background: #111827; font-size: 14px; } .youtube { background: #e84848; font-size: 11px; } .douyin { background: #111827; font-size: 11px; }
 .how-section { padding: 90px 0 100px; }
 .section-heading { text-align: center; }
 h2 { margin: 12px 0 10px; font-size: 42px; line-height: 1.1; }
@@ -115,6 +119,7 @@ h2 { margin: 12px 0 10px; font-size: 42px; line-height: 1.1; }
   .site-header { height: 68px; } .nav-links { display: none; }
   .hero-content { padding: 63px 0 55px; } h1 { font-size: 43px; }
   .download-form { display: block; margin-top: 30px; } .download-button { justify-content: center; width: 100%; height: 52px; margin-top: 10px; }
+  .platform-picker { flex-wrap: wrap; margin-bottom: -17px; } .platform-tab { flex: 1 1 42%; justify-content: center; }
   .format-list { grid-template-columns: 1fr; }
   .trusted-row { flex-wrap: wrap; gap: 10px 20px; margin-top: 32px; } .trusted-label { display: none; }
   .supported-inner { display: block; height: auto; padding: 25px 0; text-align: center; } .platforms { justify-content: center; margin-top: 17px; gap: 18px; }
