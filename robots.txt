@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://downloadface.netlify.app/sitemap.xml
