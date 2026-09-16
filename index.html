@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DownFace giúp tải video Facebook, Reels và Watch công khai ở MP4, HD, Full HD hoặc MP3 nhanh chóng, miễn phí và không cần đăng nhập."
+    />
+    <meta
+      name="keywords"
+      content="tải video Facebook, download video Facebook, tải Reels Facebook, tải Facebook Watch, tải video Facebook HD, tải video Facebook MP3"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="DownFace" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DownFace" />
+    <meta property="og:title" content="DownFace - Tải video Facebook MP4 và MP3" />
+    <meta
+      property="og:description"
+      content="Công cụ tải video Facebook công khai ở chất lượng HD, Full HD và MP3. Không cần đăng nhập."
+    />
+    <meta property="og:locale" content="vi_VN" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="DownFace - Tải video Facebook" />
+    <meta
+      name="twitter:description"
+      content="Tải video Facebook, Reels và Watch công khai miễn phí."
+    />
+    <link rel="alternate" hreflang="vi" href="/" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "DownFace",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "vi",
+        "description": "Công cụ tải video Facebook công khai ở định dạng MP4 và MP3.",
+        "featureList": [
+          "Tải video Facebook HD và Full HD",
+          "Tải Facebook Reels và Watch",
+          "Chuyển audio sang MP3"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "VND"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#" aria-label="DownFace trang chủ">
+          <span class="brand-mark">D</span>
+          <span>DownFace<span class="brand-dot">.</span></span>
+        </a>
+        <nav class="nav-links" aria-label="Điều hướng chính">
+          <a href="#how-it-works">Cách hoạt động</a>
+          <a href="#faq">Câu hỏi thường gặp</a>
+        </nav>
+        <a class="language" href="#" aria-label="Ngôn ngữ hiện tại">VI <span>⌄</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-glow hero-glow-one"></div>
+        <div class="hero-glow hero-glow-two"></div>
+        <div class="container hero-content">
+          <div class="eyebrow"><span class="spark">✦</span> NHANH · MIỄN PHÍ · DỄ DÙNG</div>
+          <h1>Tải video Facebook<br /><span>theo cách đơn giản.</span></h1>
+          <p class="hero-copy">
+            Tải video Facebook, Reels và Watch công khai ở chất lượng HD.<br />
+            Không cần đăng nhập, không cần cài đặt phần mềm.
+          </p>
+
+          <form class="download-form" id="download-form" novalidate>
+            <label class="sr-only" for="video-url">Dán liên kết video Facebook</label>
+            <div class="input-shell">
+              <span class="link-icon" aria-hidden="true">↗</span>
+              <input
+                id="video-url"
+                name="video-url"
+                type="url"
+                autocomplete="url"
+                placeholder="Dán liên kết video Facebook vào đây..."
+                spellcheck="false"
+              />
+              <button class="paste-button" type="button" id="paste-button">DÁN</button>
+            </div>
+            <button class="download-button" type="submit">
+              <span>Tải video</span>
+              <span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+          </form>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          <section class="results-panel" id="results-panel" hidden aria-live="polite">
+            <div class="video-summary">
+              <img id="video-thumbnail" alt="" />
+              <div>
+                <h2 id="video-title">Video Facebook</h2>
+                <p id="video-meta"></p>
+              </div>
+            </div>
+            <div class="format-heading">
+              <span>Chọn chất lượng tải xuống</span>
+              <small>Video</small>
+            </div>
+            <div class="format-list" id="format-list"></div>
+          </section>
+          <p class="privacy-note"><span aria-hidden="true">▣</span> Chúng tôi không lưu trữ liên kết hoặc video của bạn.</p>
+
+          <div class="trusted-row">
+            <span class="trusted-label">Được tin dùng bởi</span>
+            <span class="trust-stat"><strong>2M+</strong> lượt tải</span>
+            <span class="trust-stat"><strong>4.9/5</strong> đánh giá</span>
+            <span class="trust-stat"><strong>100%</strong> miễn phí</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="supported-section">
+        <div class="container supported-inner">
+          <span class="supported-label">HOẠT ĐỘNG VỚI</span>
+          <div class="platforms">
+            <span class="platform"><b class="platform-icon facebook">f</b> Facebook</span>
+            <span class="platform"><b class="platform-icon reels">▶</b> Reels</span>
+            <span class="platform"><b class="platform-icon watch">▶</b> Watch</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-section" id="how-it-works">
+        <div class="container">
+          <div class="section-heading">
+            <div class="eyebrow">CÁCH HOẠT ĐỘNG</div>
+            <h2>Ba bước. Xong ngay.</h2>
+            <p>Không rắc rối, không quảng cáo làm phiền. Chỉ cần liên kết video bạn muốn lưu.</p>
+          </div>
+          <div class="steps">
+            <article class="step-card">
+              <div class="step-number">01</div>
+              <div class="step-icon">↗</div>
+              <h3>Sao chép liên kết</h3>
+              <p>Mở video trên Facebook, chọn Chia sẻ và sao chép liên kết.</p>
+            </article>
+            <article class="step-card featured-step">
+              <div class="step-number">02</div>
+              <div class="step-icon">⌁</div>
+              <h3>Dán vào ô trên</h3>
+              <p>Dán liên kết vào ô nhập liệu ở phía trên và nhấn “Tải video”.</p>
+            </article>
+            <article class="step-card">
+              <div class="step-number">03</div>
+              <div class="step-icon">↓</div>
+              <h3>Lưu video</h3>
+              <p>Chọn chất lượng mong muốn và lưu video về thiết bị của bạn.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <div class="container faq-layout">
+          <div class="section-heading">
+            <div class="eyebrow">GIẢI ĐÁP NHANH</div>
+            <h2>Bạn hỏi,<br />chúng tôi trả lời.</h2>
+          </div>
+          <div class="faq-list">
+            <details open>
+              <summary>DownFace có miễn phí không?<span>+</span></summary>
+              <p>Có. DownFace hoàn toàn miễn phí và không yêu cầu bạn tạo tài khoản.</p>
+            </details>
+            <details>
+              <summary>Video tải về được lưu ở đâu?<span>+</span></summary>
+              <p>Video sẽ được lưu vào thư mục tải xuống mặc định của trình duyệt.</p>
+            </details>
+            <details>
+              <summary>Tôi có cần đăng nhập Facebook không?<span>+</span></summary>
+              <p>Không. Bạn chỉ cần liên kết công khai của video muốn tải.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-section">
+        <div class="container seo-content">
+          <div class="eyebrow">DOWNFACE</div>
+          <h2>Tải video Facebook nhanh và đơn giản</h2>
+          <p>
+            DownFace là công cụ trực tuyến hỗ trợ tải video Facebook công khai,
+            Facebook Reels và Facebook Watch về thiết bị ở định dạng MP4 hoặc MP3.
+            Bạn chỉ cần sao chép liên kết bài đăng, dán vào ô tìm kiếm và chọn
+            chất lượng phù hợp.
+          </p>
+          <p>
+            Công cụ hoạt động trên điện thoại và máy tính, hỗ trợ các lựa chọn
+            video HD, Full HD và audio MP3. Hãy chỉ tải nội dung bạn có quyền
+            sử dụng và tôn trọng quyền riêng tư của người đăng.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="#"><span class="brand-mark">D</span><span>DownFace<span class="brand-dot">.</span></span></a>
+        <p>© 2026 DownFace. Sử dụng có trách nhiệm.</p>
+        <div class="footer-links"><a href="#">Điều khoản</a><a href="#">Chính sách riêng tư</a></div>
+      </div>
+    </footer>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "DownFace có miễn phí không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Có. DownFace miễn phí và không yêu cầu tạo tài khoản."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tôi có cần đăng nhập Facebook không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Không. DownFace chỉ xử lý liên kết video Facebook công khai."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "DownFace hỗ trợ định dạng nào?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DownFace hỗ trợ tải video MP4 và audio MP3 từ các video công khai tương thích."
+            }
+          }
+        ]
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

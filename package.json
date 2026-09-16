@@ -1,0 +1,9 @@
+{
+  "name": "downface",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Facebook public video downloader",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
